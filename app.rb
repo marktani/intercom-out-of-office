@@ -70,8 +70,11 @@ def send_out_of_office_message (conversation_id)
 end
 
 def already_sent_message_in_past_24_hours (conversation_id)
+  puts "already_init"
   init_intercom
+  puts "already_find"
   conversation = @intercom.conversations.find(:id => conversation_id)
+  puts "already_parts"
 
   conversation.conversation_parts
     .select{|c| c.part_type == "note"}
