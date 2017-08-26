@@ -28,6 +28,7 @@ post '/' do
 end
 
 def init_intercom
+  puts "Init Intercom"
   if @intercom.nil? then
     app_id = ENV["APP_ID"]
     api_key = ENV["API_KEY"]
